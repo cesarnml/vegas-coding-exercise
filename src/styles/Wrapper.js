@@ -12,5 +12,7 @@ export const Wrapper = styled.div`
   }
   a {
     color: ${props => colors.hotelLink};
+    /* border: 1px solid pink; */
+    padding-right: 16px;
   }
 `
