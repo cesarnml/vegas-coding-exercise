@@ -26,12 +26,12 @@ export const TabContent = ({ details, location, description, media, selectedTab 
             <button onClick={() => setExpanded(prev => !prev)}>
               {isExpanded ? 'HIDE FULL DESCRIPTION' : 'SHOW FULL DESCRIPTION'}
               {isExpanded ? (
-                <span role='img' aria-label='up arrow'>
-                  ⬆️
+                <span role='img' aria-label='up arrow' className='icon-glyphs'>
+                  &#x2191;
                 </span>
               ) : (
-                <span role='img' aria-label='down arrow'>
-                  ⬇️
+                <span role='img' aria-label='down arrow' className='icon-glyphs'>
+                  &#x2193;
                 </span>
               )}
             </button>
@@ -52,12 +52,12 @@ export const TabContent = ({ details, location, description, media, selectedTab 
             <button onClick={() => setExpanded(prev => !prev)}>
               {isExpanded ? 'HIDE FULL DESCRIPTION' : 'SHOW FULL DESCRIPTION'}
               {isExpanded ? (
-                <span role='img' aria-label='up arrow'>
-                  ⬆️
+                <span role='img' aria-label='up arrow' className='icon-glyphs'>
+                  &#x2191;
                 </span>
               ) : (
-                <span role='img' aria-label='down arrow'>
-                  ⬇️
+                <span role='img' aria-label='down arrow' className='icon-glyphs'>
+                  &#x2193;
                 </span>
               )}
             </button>
@@ -68,8 +68,8 @@ export const TabContent = ({ details, location, description, media, selectedTab 
         return (
           <div>
             <div>
-              <span role='img' aria-label='pin'>
-                📍
+              <span role='img' aria-label='pin' className='icon-glyphs'>
+                &#x2352;
               </span>
               <span>
                 {`${location.address}, ${location.city}, ${location.state} ${location.postalCode}`}

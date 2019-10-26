@@ -51,7 +51,7 @@ const Wrapper = styled.div`
     color: ${props => colors.hotelLink};
     padding-right: 16px;
     flex-grow: 1;
-    letter-space: 1px;
+    letter-spacing: 1px;
   }
   span {
     font-family: Verdana;

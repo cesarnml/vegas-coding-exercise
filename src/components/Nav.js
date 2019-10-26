@@ -6,7 +6,7 @@ export const Nav = () => {
     <Navbar>
       <a className='all-hotels' href='http://localhost:3000'>
         <span className='left-arrow' role='img' aria-label='left arrow'>
-          ⬅️
+          &#x2190;
         </span>
         <span>See All Las Vegas Hotels</span>
       </a>
@@ -32,5 +32,6 @@ const Navbar = styled.nav`
   }
   .left-arrow {
     margin: 0 6px 0 0;
+    font-family: Icons;
   }
 `

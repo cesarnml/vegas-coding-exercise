@@ -13,20 +13,20 @@ export const HotelCard = ({ name, code, starRating, areaName, phoneNumber, price
         </Flex>
         <Flex className='hotel-location'>
           <div onClick={() => setTab('location')} style={{ cursor: 'pointer' }}>
-            <span role='img' aria-label='map marker'>
-              📍
+            <span role='img' aria-label='map marker' className='icon-glyphs'>
+              &#x2352;
             </span>
             {areaName}
           </div>
           <div>
-            <span role='img' aria-label='phone number'>
-              📞
+            <span role='img' aria-label='phone number' className='icon-glyphs'>
+              &#x2706;
             </span>
             {phoneNumber}
           </div>
           <div>
-            <span role='img' aria-label='thumbs up'>
-              👍
+            <span role='img' aria-label='thumbs up' className='icon-glyphs'>
+              &#x2706;
             </span>
             Best Price Guarantee
           </div>
