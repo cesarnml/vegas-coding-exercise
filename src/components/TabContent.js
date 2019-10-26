@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const TabInfo = ({ details, location, description, media, selectedTab }) => {
+export const TabContent = ({ details, location, description, media, selectedTab }) => {
   const { type, href, width, height } = media.find(photo => photo.type === 'productMap')
   const imgRef = useRef()
   const [isExpanded, setExpanded] = useState(false)
@@ -86,7 +86,7 @@ export const TabInfo = ({ details, location, description, media, selectedTab }) 
   return <StyledTabContent isExpanded={isExpanded}>{renderTab(selectedTab)}</StyledTabContent>
 }
 
-TabInfo.propTypes = {
+TabContent.propTypes = {
   media: PropTypes.arrayOf(
     PropTypes.shape({
       type: PropTypes.string.isRequired,

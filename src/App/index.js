@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import { Normalize } from 'styled-normalize'
-import { Nav, HotelCover, HotelCard, HotelList, Tabs, TabInfo } from 'components'
+import { Nav, HotelCover, HotelCard, HotelList, Tabs, TabContent } from 'components'
 import { isEmpty } from 'utils'
 
 const url = 'http://localhost:8888/api/hotels/venetian'
@@ -39,7 +39,7 @@ const App = () => {
               setTab={setTab}
             />
             <Tabs tabNames={tabNames} selectedTab={selectedTab} setTab={setTab} />
-            <TabInfo
+            <TabContent
               description={description}
               details={details}
               location={location}
@@ -62,7 +62,7 @@ const Container = styled.div`
   font-size: 14px;
 `
 
-const Flex = styled.section`
+const Flex = styled.div`
   display: flex;
   flex-direction: ${props => props.direction};
   background: ${props => props.bg};
