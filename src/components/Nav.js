@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const Nav = () => {
   return (
     <Navbar>
-      <a className='all-hotels' href='http://localhost:3000'>
+      <a className='all-hotels' href={process.env.REACT_APP_CLIENT_URL}>
         <span className='left-arrow' role='img' aria-label='left arrow'>
           &#x2190;
         </span>

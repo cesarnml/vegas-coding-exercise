@@ -6,7 +6,7 @@ import { Nav, HotelCover, HotelCard, Tabs, TabContent } from 'components'
 import { HotelList } from 'containers'
 import { isEmpty } from 'utils'
 
-const url = 'http://localhost:8888/api/hotels/venetian'
+const url = `${process.env.REACT_APP_SERVER_URL}/api/hotels/venetian`
 const tabNames = ['description', 'details', 'location']
 
 const App = () => {

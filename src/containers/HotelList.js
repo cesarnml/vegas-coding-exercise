@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { colors, ListItem } from 'styles'
 import { sortByName, removeDuplicates } from 'utils'
 
-const url = 'http://localhost:8888/api/hotels'
+const url = `${process.env.REACT_APP_SERVER_URL}/api/hotels`
 
 export const HotelList = () => {
   const [hotels, setHotels] = useState([])
@@ -19,7 +19,7 @@ export const HotelList = () => {
           .sort(sortByName)
           .map((hotel, idx) => (
             <ListItem key={idx}>
-              <a href='http://localhost:3000' alt='hotel name'>
+              <a href={process.env.REACT_APP_CLIENT_URL} alt='hotel name'>
                 {hotel.name}
               </a>
               <span>{`$${hotel.price.toFixed(2)}`}</span>

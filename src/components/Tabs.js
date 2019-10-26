@@ -25,7 +25,6 @@ Tabs.propTypes = {
 }
 
 const TabList = styled.div`
-  /* border: 1px solid blue; */
   display: flex;
   .active {
     border-bottom: 4px solid #733080;
@@ -33,7 +32,6 @@ const TabList = styled.div`
 `
 
 const TabItem = styled.div`
-  /* border: 1px solid green; */
   display: flex;
   justify-content: center;
   border-bottom: 4px solid transparent;

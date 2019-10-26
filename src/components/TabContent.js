@@ -67,8 +67,8 @@ export const TabContent = ({ details, location, description, media, selectedTab 
       case 'location': {
         return (
           <div>
-            <div>
-              <span role='img' aria-label='pin' className='icon-glyphs'>
+            <div className='location-address'>
+              <span role='img' aria-label='pin' className='icon-glyphs marker'>
                 &#x2352;
               </span>
               <span>
@@ -119,10 +119,19 @@ const StyledTabContent = styled.div`
   letter-spacing: 0.2px;
   line-height: 20px;
   font-weight: lighter;
+  transition: all 2s ease;
+  display: flex;
+  .location-address {
+    align-items: center;
+  }
   .accordion {
     margin: 0;
     height: ${props => (props.isExpanded ? '100%' : '200px')};
     overflow: hidden;
+  }
+
+  .marker {
+    margin-right: 10px;
   }
   button {
     background: none;
