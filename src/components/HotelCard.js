@@ -26,7 +26,7 @@ export const HotelCard = ({ name, code, starRating, areaName, phoneNumber, price
           </div>
           <div>
             <span role='img' aria-label='thumbs up' className='icon-glyphs'>
-              &#x2706;
+              &#x2764;
             </span>
             Best Price Guarantee
           </div>
