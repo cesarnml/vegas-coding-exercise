@@ -66,25 +66,16 @@ const App = () => {
 export default App
 
 const Container = styled.div`
-  @font-face {
-    font-family: 'Icons';
-    src: url('/assets/fonts/icons.woff') format('woff'),
-      url('/assets/fonts/icons.eot'),
-      url('/assets/fonts/icons.ttf') format('truetype');
-  }
-  border: 1px solid gray;
   margin: 50px auto;
   min-height: 100vh;
   max-width: 990px;
-  /* border: 1px solid red; */
-  font-size: calc(14 / 16 * 1rem);
+  font-size: 14px;
 `
 
 const Flex = styled.section`
   display: flex;
   flex-direction: ${props => props.direction};
   background: ${props => props.bg};
-  /* border: ${props => `2px solid ${props.border}`}; */
   width: ${props => props.width};
   flex-grow: ${props => props.grow};
   margin: ${props => props.margin};

@@ -1,8 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const Nav = props => {
+export const Nav = () => {
   return (
     <Navbar>
       <span className='left-arrow' role='img' aria-label='left arrow'>
@@ -12,8 +11,6 @@ export const Nav = props => {
     </Navbar>
   )
 }
-
-Nav.propTypes = {}
 
 const Navbar = styled.nav`
   margin: 0 auto;

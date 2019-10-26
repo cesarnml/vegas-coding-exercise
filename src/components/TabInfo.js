@@ -53,7 +53,30 @@ export const TabInfo = ({
   return <StyledTabContent>{renderTab(selectedTab)}</StyledTabContent>
 }
 
-TabInfo.propTypes = {}
+TabInfo.propTypes = {
+  media: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string.isRequired,
+      href: PropTypes.string.isRequired,
+      width: PropTypes.number.isRequired,
+      height: PropTypes.number.isRequired,
+    })
+  ),
+  selectedTab: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    address: PropTypes.string.isRequired,
+    city: PropTypes.string.isRequired,
+    state: PropTypes.string.isRequired,
+    postalCode: PropTypes.string.isRequired,
+  }),
+  details: PropTypes.arrayOf(
+    PropTypes.shape({
+      label: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+    })
+  ),
+}
 
 const StyledTabContent = styled.div`
   margin: 25px 16px;

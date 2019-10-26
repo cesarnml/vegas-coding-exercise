@@ -18,7 +18,11 @@ export const Tabs = ({ tabNames, selectedTab, setTab }) => {
   )
 }
 
-Tabs.propTypes = {}
+Tabs.propTypes = {
+  selectedTab: PropTypes.string.isRequired,
+  setTab: PropTypes.func.isRequired,
+  tabNames: PropTypes.arrayOf(PropTypes.string.isRequired),
+}
 
 const TabList = styled.div`
   /* border: 1px solid blue; */
@@ -33,7 +37,6 @@ const TabItem = styled.div`
   display: flex;
   justify-content: center;
   border-bottom: 4px solid transparent;
-
   align-items: center;
   flex-grow: 1;
   height: 50px;

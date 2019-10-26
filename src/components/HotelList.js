@@ -19,7 +19,7 @@ export const HotelList = () => {
           .sort(sortByName)
           .map((hotel, idx) => (
             <ListItem key={idx}>
-              <a href='#' alt='hotel name'>
+              <a href='https://example.com' alt='hotel name'>
                 {hotel.name}
               </a>
               <span>{`$${hotel.price.toFixed(2)}`}</span>
