@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import { Normalize } from 'styled-normalize'
-import { Nav, HotelCover, HotelCard, HotelList, Tabs, TabContent } from 'components'
+import { Nav, HotelCover, HotelCard, Tabs, TabContent } from 'components'
+import { HotelList } from 'containers'
 import { isEmpty } from 'utils'
 
 const url = 'http://localhost:8888/api/hotels/venetian'
@@ -31,7 +32,6 @@ const App = () => {
           <Flex border='green' direction='column' grow='1' margin='0px 14px'>
             <HotelCard
               name={hotel.name}
-              code={hotel.code}
               starRating={hotel.starRating}
               phoneNumber={hotel.phoneNumber}
               price={hotel.price}

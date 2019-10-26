@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import StarRatings from 'react-star-ratings'
+import { HotelInfo } from 'components'
 
-export const HotelCard = ({ name, code, starRating, areaName, phoneNumber, price, setTab }) => {
+export const HotelCard = ({ name, starRating, areaName, phoneNumber, price, setTab }) => {
   return (
     <Section>
       <Flex direction='column'>
@@ -12,24 +13,7 @@ export const HotelCard = ({ name, code, starRating, areaName, phoneNumber, price
           <StarRatings rating={starRating} starDimension='15px' starSpacing='0.5px' />
         </Flex>
         <Flex className='hotel-location'>
-          <div onClick={() => setTab('location')} style={{ cursor: 'pointer' }}>
-            <span role='img' aria-label='map marker' className='icon-glyphs'>
-              &#x2352;
-            </span>
-            {areaName}
-          </div>
-          <div>
-            <span role='img' aria-label='phone number' className='icon-glyphs'>
-              &#x2706;
-            </span>
-            {phoneNumber}
-          </div>
-          <div>
-            <span role='img' aria-label='thumbs up' className='icon-glyphs'>
-              &#x2764;
-            </span>
-            Best Price Guarantee
-          </div>
+          <HotelInfo areaName={areaName} phoneNumber={phoneNumber} setTab={setTab} />
         </Flex>
       </Flex>
       <Flex direction='column' className='hotel-price'>
@@ -42,12 +26,8 @@ export const HotelCard = ({ name, code, starRating, areaName, phoneNumber, price
 
 HotelCard.propTypes = {
   name: PropTypes.string.isRequired,
-  code: PropTypes.string.isRequired,
   starRating: PropTypes.number.isRequired,
-  areaName: PropTypes.string.isRequired,
-  phoneNumber: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  setTab: PropTypes.func.isRequired,
 }
 
 const Section = styled.section`
