@@ -10,7 +10,10 @@ export const TabContent = ({ details, location, description, media, selectedTab 
   useEffect(() => {
     setExpanded(false)
     if (imgRef.current) {
-      imgRef.current.focus()
+      imgRef.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      })
     }
   }, [selectedTab])
 
