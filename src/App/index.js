@@ -21,32 +21,38 @@ const App = () => {
   return (
     <Container>
       <Normalize />
-      <Nav />
       {!isEmpty(hotel) && (
-        <Flex border='red' direction='row'>
-          <Flex direction='column' margin='0px 14px'>
-            <HotelCover media={media} />
-            <HotelList />
+        <>
+          <Nav />
+          <Flex border='red' direction='row'>
+            <Flex direction='column' margin='0px 14px'>
+              <HotelCover media={media} />
+              <HotelList />
+            </Flex>
+            <Flex direction='column' grow='1' margin='0px 14px'>
+              <HotelCard
+                name={hotel.name}
+                starRating={hotel.starRating}
+                phoneNumber={hotel.phoneNumber}
+                price={hotel.price}
+                areaName={location.areaName}
+                setTab={setTab}
+              />
+              <Tabs
+                tabNames={tabNames}
+                selectedTab={selectedTab}
+                setTab={setTab}
+              />
+              <TabContent
+                description={description}
+                details={details}
+                location={location}
+                media={media}
+                selectedTab={selectedTab}
+              />
+            </Flex>
           </Flex>
-          <Flex direction='column' grow='1' margin='0px 14px'>
-            <HotelCard
-              name={hotel.name}
-              starRating={hotel.starRating}
-              phoneNumber={hotel.phoneNumber}
-              price={hotel.price}
-              areaName={location.areaName}
-              setTab={setTab}
-            />
-            <Tabs tabNames={tabNames} selectedTab={selectedTab} setTab={setTab} />
-            <TabContent
-              description={description}
-              details={details}
-              location={location}
-              media={media}
-              selectedTab={selectedTab}
-            />
-          </Flex>
-        </Flex>
+        </>
       )}
     </Container>
   )
