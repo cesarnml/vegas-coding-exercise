@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import { colors, ListItem } from 'styles'
 import { sortByName, removeDuplicates } from 'utils'
 
+const url = 'http://localhost:8888/api/hotels'
+
 export const HotelList = () => {
   const [hotels, setHotels] = useState([])
   useEffect(() => {
-    axios
-      .get('http://localhost:8888/api/hotels')
-      .then(res => setHotels(res.data.list))
+    axios.get(url).then(res => setHotels(res.data.list))
   }, [])
 
   return (
@@ -19,7 +19,7 @@ export const HotelList = () => {
           .sort(sortByName)
           .map((hotel, idx) => (
             <ListItem key={idx}>
-              <a href='https://example.com' alt='hotel name'>
+              <a href='http://localhost:3000' alt='hotel name'>
                 {hotel.name}
               </a>
               <span>{`$${hotel.price.toFixed(2)}`}</span>

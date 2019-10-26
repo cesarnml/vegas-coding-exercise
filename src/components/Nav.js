@@ -4,10 +4,12 @@ import styled from 'styled-components'
 export const Nav = () => {
   return (
     <Navbar>
-      <span className='left-arrow' role='img' aria-label='left arrow'>
-        ⬅️
-      </span>
-      <span>See All Las Vegas Hotels</span>
+      <a className='all-hotels' href='http://localhost:3000'>
+        <span className='left-arrow' role='img' aria-label='left arrow'>
+          ⬅️
+        </span>
+        <span>See All Las Vegas Hotels</span>
+      </a>
     </Navbar>
   )
 }
@@ -23,6 +25,11 @@ const Navbar = styled.nav`
   color: #976395;
   font-family: Icons, Tahoma;
   text-transform: uppercase;
+  .all-hotels {
+    cursor: pointer;
+    color: #976395;
+    text-decoration: none;
+  }
   .left-arrow {
     margin: 0 6px 0 0;
   }

@@ -8,7 +8,6 @@ export const TabInfo = ({ details, location, description, media, selectedTab }) 
   const [isExpanded, setExpanded] = useState(false)
 
   useEffect(() => {
-    console.log('useEffect', isExpanded)
     setExpanded(false)
     if (imgRef.current) {
       imgRef.current.focus()

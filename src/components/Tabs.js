@@ -47,4 +47,5 @@ const TabItem = styled.div`
   letter-spacing: 1.2px;
   font-weight: lighter;
   text-transform: uppercase;
+  cursor: pointer;
 `
