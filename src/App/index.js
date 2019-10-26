@@ -21,9 +21,7 @@ const App = () => {
     <Container>
       <Normalize />
       <Nav />
-      {isEmpty(hotel) ? (
-        <div>Loading ...</div>
-      ) : (
+      {isEmpty(hotel) && (
         <Flex border='red' direction='row'>
           <Flex border='blue' direction='column' margin='0px 14px'>
             <HotelCover media={media} />
