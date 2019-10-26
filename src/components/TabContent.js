@@ -11,7 +11,6 @@ export const TabContent = ({ details, location, description, media, selectedTab 
     setExpanded(false)
     if (imgRef.current) {
       imgRef.current.focus()
-      console.log('exist')
     }
   }, [selectedTab])
 
@@ -82,7 +81,6 @@ export const TabContent = ({ details, location, description, media, selectedTab 
       }
     }
   }
-  console.log('rendering', isExpanded)
   return <StyledTabContent isExpanded={isExpanded}>{renderTab(selectedTab)}</StyledTabContent>
 }
 
