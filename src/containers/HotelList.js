@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import styled from 'styled-components'
-import { colors, ListItem } from 'styles'
+import { colors } from 'styles'
 import { sortByName, removeDuplicates } from 'utils'
 
 const url = `${process.env.REACT_APP_SERVER_URL}/api/hotels`
@@ -43,17 +43,23 @@ const Wrapper = styled.div`
     padding: 0;
     margin: 0;
   }
-  li {
-    line-height: 14px;
-    margin-bottom: 20px;
+
+  span {
+    font-family: Verdana;
   }
+`
+
+export const ListItem = styled.li`
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  line-height: 14px;
+  margin-bottom: 20px;
   a {
+    text-decoration: none;
     color: ${props => colors.hotelLink};
     padding-right: 16px;
     flex-grow: 1;
     letter-spacing: 1px;
-  }
-  span {
-    font-family: Verdana;
   }
 `

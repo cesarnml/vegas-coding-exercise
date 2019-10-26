@@ -5,7 +5,7 @@ export const Nav = () => {
   return (
     <Navbar>
       <a className='all-hotels' href={process.env.REACT_APP_CLIENT_URL}>
-        <span className='left-arrow' role='img' aria-label='left arrow'>
+        <span className='left-arrow icon-glyphs' role='img' aria-label='left arrow'>
           &#x2190;
         </span>
         <span>See All Las Vegas Hotels</span>
@@ -32,6 +32,5 @@ const Navbar = styled.nav`
   }
   .left-arrow {
     margin: 0 6px 0 0;
-    font-family: Icons;
   }
 `

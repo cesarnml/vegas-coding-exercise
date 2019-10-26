@@ -9,7 +9,7 @@ export const HotelCard = ({ name, starRating, areaName, phoneNumber, price, setT
     <Section>
       <Flex direction='column'>
         <Flex className='hotel-detail'>
-          <h1>{name}</h1>
+          <h1 className='hotel-name'>{name}</h1>
           <StarRatings rating={starRating} starDimension='15px' starSpacing='0.5px' />
         </Flex>
         <Flex className='hotel-location'>
@@ -41,12 +41,6 @@ const Section = styled.section`
     align-items: flex-end;
     margin-bottom: 10px;
     min-width: 400px;
-    h1 {
-      text-transform: uppercase;
-      margin: 0 8px 0 0;
-      line-height: 32px;
-      letter-spacing: 0.6px;
-    }
   }
   .hotel-location {
     div {
@@ -60,19 +54,23 @@ const Section = styled.section`
   }
   .hotel-price {
     flex-grow: 0;
-    padding: 0 16px 0 0;
     min-width: 175px;
+    padding: 0 16px 0 0;
   }
 `
 
 const Flex = styled.div`
   display: flex;
   flex-direction: ${props => props.direction};
-  h1 {
+  .hotel-name {
     margin: 0;
     font-family: Verdana;
     font-weight: lighter;
     font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0 8px 0 0;
+    line-height: 32px;
+    letter-spacing: 0.6px;
   }
   .price {
     color: #f48721;
