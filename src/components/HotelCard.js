@@ -4,21 +4,36 @@ import styled from 'styled-components'
 import StarRatings from 'react-star-ratings'
 import { HotelInfo } from 'components'
 
-export const HotelCard = ({ name, starRating, areaName, phoneNumber, price, setTab }) => {
+export const HotelCard = ({
+  name,
+  starRating,
+  areaName,
+  phoneNumber,
+  price,
+  setTab,
+}) => {
   return (
     <Section>
       <Flex direction='column'>
         <Flex className='hotel-detail'>
           <h1 className='hotel-name'>{name}</h1>
-          <StarRatings rating={starRating} starDimension='15px' starSpacing='0.5px' />
+          <StarRatings
+            rating={starRating}
+            starDimension='15px'
+            starSpacing='0.5px'
+          />
         </Flex>
         <Flex className='hotel-location'>
-          <HotelInfo areaName={areaName} phoneNumber={phoneNumber} setTab={setTab} />
+          <HotelInfo
+            areaName={areaName}
+            phoneNumber={phoneNumber}
+            setTab={setTab}
+          />
         </Flex>
       </Flex>
       <Flex direction='column' className='hotel-price'>
         <div className='price'>{`$${price}`}</div>
-        <div className='price-caption'>HOTEL ROOMS FROM</div>
+        <div className='price-caption'>Hotel Room From</div>
       </Flex>
     </Section>
   )
