@@ -29,7 +29,7 @@ const App = () => {
               <HotelCover media={media} />
               <HotelList />
             </Flex>
-            <Flex direction='column' grow='1' margin='0px 14px'>
+            <Flex direction='column' margin='0px 14px'>
               <HotelCard
                 name={hotel.name}
                 starRating={hotel.starRating}
@@ -70,6 +70,5 @@ const Container = styled.div`
 const Flex = styled.div`
   display: flex;
   flex-direction: ${props => props.direction};
-  flex-grow: ${props => props.grow};
   margin: ${props => props.margin};
 `
