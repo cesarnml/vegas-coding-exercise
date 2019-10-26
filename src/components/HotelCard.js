@@ -3,27 +3,16 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import StarRatings from 'react-star-ratings'
 
-export const HotelCard = ({
-  name,
-  code,
-  starRating,
-  areaName,
-  phoneNumber,
-  price,
-}) => {
+export const HotelCard = ({ name, code, starRating, areaName, phoneNumber, price, setTab }) => {
   return (
     <Section>
       <Flex direction='column'>
         <Flex className='hotel-detail'>
           <h1>{name}</h1>
-          <StarRatings
-            rating={starRating}
-            starDimension='15px'
-            starSpacing='0.5px'
-          />
+          <StarRatings rating={starRating} starDimension='15px' starSpacing='0.5px' />
         </Flex>
         <Flex className='hotel-location'>
-          <div>
+          <div onClick={() => setTab('location')} style={{ cursor: 'pointer' }}>
             <span role='img' aria-label='map marker'>
               📍
             </span>
@@ -58,6 +47,7 @@ HotelCard.propTypes = {
   areaName: PropTypes.string.isRequired,
   phoneNumber: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  setTab: PropTypes.func.isRequired,
 }
 
 const Section = styled.section`
@@ -70,6 +60,7 @@ const Section = styled.section`
   .hotel-detail {
     align-items: flex-end;
     margin-bottom: 10px;
+    min-width: 400px;
     h1 {
       text-transform: uppercase;
       margin: 0 8px 0 0;
@@ -90,6 +81,7 @@ const Section = styled.section`
   .hotel-price {
     flex-grow: 0;
     padding: 0 16px 0 0;
+    min-width: 175px;
   }
 `
 

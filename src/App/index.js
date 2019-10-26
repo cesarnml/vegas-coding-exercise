@@ -2,14 +2,7 @@ import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import axios from 'axios'
 import { Normalize } from 'styled-normalize'
-import {
-  Nav,
-  HotelCover,
-  HotelCard,
-  HotelList,
-  Tabs,
-  TabInfo,
-} from 'components'
+import { Nav, HotelCover, HotelCard, HotelList, Tabs, TabInfo } from 'components'
 import { isEmpty } from 'utils'
 
 const url = 'http://localhost:8888/api/hotels/venetian'
@@ -43,12 +36,9 @@ const App = () => {
               phoneNumber={hotel.phoneNumber}
               price={hotel.price}
               areaName={location.areaName}
-            />
-            <Tabs
-              tabNames={tabNames}
-              selectedTab={selectedTab}
               setTab={setTab}
             />
+            <Tabs tabNames={tabNames} selectedTab={selectedTab} setTab={setTab} />
             <TabInfo
               description={description}
               details={details}

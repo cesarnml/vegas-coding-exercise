@@ -1,32 +1,65 @@
-import React from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
-export const TabInfo = ({
-  details,
-  location,
-  description,
-  media,
-  selectedTab,
-}) => {
-  const { type, href, width, height } = media.find(
-    photo => photo.type === 'productMap'
-  )
+export const TabInfo = ({ details, location, description, media, selectedTab }) => {
+  const { type, href, width, height } = media.find(photo => photo.type === 'productMap')
+  const imgRef = useRef()
+  const [isExpanded, setExpanded] = useState(false)
+
+  useEffect(() => {
+    console.log('useEffect', isExpanded)
+    setExpanded(false)
+    if (imgRef.current) {
+      imgRef.current.focus()
+      console.log('exist')
+    }
+  }, [selectedTab])
 
   const renderTab = selectedTab => {
     switch (selectedTab) {
       case 'description': {
-        return description
+        return (
+          <div>
+            <p className='accordion'>{description}</p>
+            <button onClick={() => setExpanded(prev => !prev)}>
+              {isExpanded ? 'HIDE FULL DESCRIPTION' : 'SHOW FULL DESCRIPTION'}
+              {isExpanded ? (
+                <span role='img' aria-label='up arrow'>
+                  ⬆️
+                </span>
+              ) : (
+                <span role='img' aria-label='down arrow'>
+                  ⬇️
+                </span>
+              )}
+            </button>
+          </div>
+        )
       }
       case 'details': {
         return (
           <div>
-            {details.map((ele, idx) => (
-              <div key={idx}>
-                <h4>{ele.label}</h4>
-                <p>{ele.value}</p>
-              </div>
-            ))}
+            <div className='accordion'>
+              {details.map((ele, idx) => (
+                <div key={idx}>
+                  <h4>{ele.label}</h4>
+                  <p>{ele.value}</p>
+                </div>
+              ))}
+            </div>
+            <button onClick={() => setExpanded(prev => !prev)}>
+              {isExpanded ? 'HIDE FULL DESCRIPTION' : 'SHOW FULL DESCRIPTION'}
+              {isExpanded ? (
+                <span role='img' aria-label='up arrow'>
+                  ⬆️
+                </span>
+              ) : (
+                <span role='img' aria-label='down arrow'>
+                  ⬇️
+                </span>
+              )}
+            </button>
           </div>
         )
       }
@@ -41,7 +74,7 @@ export const TabInfo = ({
                 {`${location.address}, ${location.city}, ${location.state} ${location.postalCode}`}
               </span>
             </div>
-            <img src={href} alt={type} width={width} height={height} />
+            <img ref={imgRef} src={href} alt={type} width={width} height={height} />
           </div>
         )
       }
@@ -50,7 +83,8 @@ export const TabInfo = ({
       }
     }
   }
-  return <StyledTabContent>{renderTab(selectedTab)}</StyledTabContent>
+  console.log('rendering', isExpanded)
+  return <StyledTabContent isExpanded={isExpanded}>{renderTab(selectedTab)}</StyledTabContent>
 }
 
 TabInfo.propTypes = {
@@ -83,8 +117,24 @@ const StyledTabContent = styled.div`
   font-size: 16px;
   font-family: Tahoma;
   letter-spacing: 0.2px;
-  line-spacing: 18px;
+  line-height: 20px;
   font-weight: lighter;
+  .accordion {
+    margin: 0;
+    height: ${props => (props.isExpanded ? '100%' : '200px')};
+    overflow: hidden;
+  }
+  button {
+    background: none;
+    border: none;
+    padding: 10px 0;
+    color: #976395;
+    cursor: pointer;
+    outline: none;
+    span {
+      margin-left: 10px;
+    }
+  }
   h4 {
     margin: 0;
   }
